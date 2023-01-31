@@ -56,11 +56,10 @@ return require('packer').startup{function(use)
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
+
   use {
       "terrortylor/nvim-comment",
-      require('nvim_comment').setup()
   }
-
 
   end,
   config = { compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua" }
