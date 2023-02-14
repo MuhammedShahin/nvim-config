@@ -22,6 +22,10 @@ return require('packer').startup{function(use)
 	  end
   })
 
+  use ({
+      'ryanoasis/vim-devicons',
+  })
+
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
 
@@ -61,6 +65,13 @@ return require('packer').startup{function(use)
       "terrortylor/nvim-comment",
   }
 
+  use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+          'nvim-tree/nvim-web-devicons', -- optional, for file icons
+      },
+      tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
   end,
   config = { compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua" }
 }
