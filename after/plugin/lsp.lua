@@ -8,7 +8,7 @@ lsp.ensure_installed({
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
