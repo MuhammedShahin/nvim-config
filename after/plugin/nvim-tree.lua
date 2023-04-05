@@ -11,10 +11,25 @@ require("nvim-tree").setup({
             show = {
                 file = false,
                 folder = false,
-                folder_arrow = false,
-                git = false,
+                folder_arrow = true,
+                git = true,
                 modified = false,
             },
+            glyphs = {
+                folder = {
+                    arrow_closed = " ",
+                    arrow_open = "",
+                },
+                git = {
+                    unstaged = "M",
+                    staged = " ",
+                    unmerged = " ",
+                    renamed = " ",
+                    untracked = "U",
+                    deleted = " ",
+                    ignored = " ",
+                }
+            }
         }
     }
 })
