@@ -137,7 +137,11 @@ lsp.on_attach(function(client, bufnr)
   end
 end)
 
-lsp.setup()
+lsp.setup("language", {
+    init_options = {
+        highlight = false
+    }
+})
 
 vim.diagnostic.config({
     virtual_text = true
