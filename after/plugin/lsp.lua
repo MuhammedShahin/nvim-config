@@ -137,12 +137,21 @@ lsp.on_attach(function(client, bufnr)
     end
 end)
 
-lsp.setup("language", {
-    on_init = function(client)
-        client.server_capabilities.semanticTokensProvider = nil
-    end
+lsp.set_server_config({
+  on_init = function(client)
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
+})
+
+lsp.format_on_save({
+  format_opts = {
+    async = false,
+    timeout_ms = 10000,
+  }
 })
 
 vim.diagnostic.config({
     virtual_text = false
 })
+
+lsp.setup()
